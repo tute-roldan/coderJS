@@ -1,3 +1,14 @@
+.iconColor{
+  color: #e7c130;
+}
+
+.text-primary {
+  --bs-text-opacity: 1;
+  color: rgba #e7c130, !important;
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +20,12 @@
 a {
   text-decoration: none;
   font-family: 'Tahoma', Geneva, Verdana, sans-serif; }
+  
+.carrito {
+  vertical-align: bottom;
+  width: 22px;
 
+}
 .header {
   display: flex;
   justify-content: end;
@@ -37,6 +53,10 @@ a {
       padding: 7px;
       margin: 28px;
       position: relative; }
+     
+
+
+
 
 .inicio {
   background-image: url(../img/fondo/black-concrete-wall.jpg);

@@ -84,14 +84,13 @@ cardGorras.innerHTML = `
            <p class="card-text">${gorras.color}</p>
            <p class="card-text">${gorras.categoria}</p>
            <h5 class="card-title">$ ${gorras.precio}</h5>
-           <a href="#" class="btn btn-primary">COMPRAR</a>
+           <button id="comprar${gorras.id}" class="btn btn-primary">COMPRAR</button>
+           </div>
        </div>
-   </div>
-    
-    `;
-    gorrasRaiz.append(cardGorras);
+        `;
+        gorrasRaiz.append(cardGorras);
+        const btnComprar = document.getElementById(`comprar${gorras.id}`);
+        btnComprar.addEventListener( "click", () => console.log(`${gorras.id}`));
 
- })
-
-
- 
+       
+     })
