@@ -25,21 +25,39 @@ a {
   vertical-align: bottom;
   width: 22px;
 
+  
 }
+
+.listaCarrito{
+
+  display: grid;
+  grid-template-columns: 300px 200px 200px 200px 200px 200px;
+  grid-template-rows: 200px;
+  gap: 10px;
+  justify-content: center;
+  justify-items: center;
+}
+
+
+
+
+
+
+
 .header {
   display: flex;
   justify-content: end;
-  background-color: #e7c130;
+  background-color: #FFFFFF;
   padding-top: 30px; }
   .header__logo {
     width: 8px;
     height: 0px;
     position: fixed;
-    top: 10px;
+    top: 30px;
     left: 1%;
     bottom: 0%;
     right: 0%;
-    scale: 15%; }
+    scale: 10%; }
   .header__paginas {
     display: flex;
     font-family: "Tahoma", Geneva, Verdana, sans-serif;
@@ -130,7 +148,7 @@ a {
     font-family: "Verdana", Geneva, Tahoma, sans-serif;
     font-size: xx-large;
     padding: 50px;
-    margin: 60px; }
+    margin: 20px; }
   .buzos_img {
     width: 300px;
     margin: 50px; }
@@ -154,7 +172,7 @@ a {
     font-family: "Verdana", Geneva, Tahoma, sans-serif;
     font-size: xx-large;
     padding: 50px;
-    margin: 60px; }
+    margin: 20px; }
   .gorras_titulo {
     background: url(../img/fondo/black-concrete-wall.jpg);
     color: #e7c130;
@@ -162,7 +180,7 @@ a {
     font-family: "Verdana", Geneva, Tahoma, sans-serif;
     font-size: xx-large;
     padding: 50px;
-    margin: 60px; }
+    margin: 20px; }
   .gorras_img {
     width: 300px;
     margin: 50px; }
@@ -229,17 +247,18 @@ a {
   background-color: #e7c130; }
   .footer__universal_proyecto {
     display: flex;
-    padding: 35px;
+    padding: 20px;
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
     margin-top: 10px; }
   .footer__text {
     color: #2d2d2a;
-    font-family: "Tahoma", Geneva, Verdana, sans-serif;
+    font-family: sans-serif;
+    font-size: small;
     font-style: italic;
     font-weight: bold;
-    width: 250px;
+   
     text-align: center; }
   .footer__logo {
     width: 100px; }
@@ -404,3 +423,5 @@ a {
   .contacto_form_contenedor {
     width: 274px;
     font-size: medium; } }
+
+
