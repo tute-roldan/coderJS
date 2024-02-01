@@ -1,92 +1,134 @@
 
 const modalCompra = document.getElementById("modalCompra");
 const productoCompra = []
-const verCarrito = document.getElementById("verCarrito");
-
-//JSON.parse(sessionStorage.getItem("carrito")) || ses.setItem("carrito", JSON.stringify(carrito));
+const bodyCarrito = document.getElementById("bodyCarrito");
+const footCarrito = document.getElementById("footCarrito")
 
 
 JSON.parse(sessionStorage.getItem("carrito"))===null && sessionStorage.setItem("carrito", JSON.stringify([]));
 
 let carrito = JSON.parse(sessionStorage.getItem("carrito"));
 
-const agregarCarrito = (id) => {
-  const productoCompra = productosBuzosDisponibles.find(item => item.id === id);
-  /*alert(`   
-    id : ${productoCompra.id} ,
-    Nombre : ${productoCompra.nombre} ,
-    color: ${productoCompra.color} ,
-    precio:${productoCompra.precio} ,
-    imagen: ${productoCompra.imagen} ,
-    categoria:${productoCompra.categoria} ,
-    cantidad: ${productoCompra.cantidad} ,
-`)*/
+
+
+
+/***************************Agregar producto a carrito*********************************/
+
+/*export*/ const agregarCarrito = (idProducto) => {
+const producto = productosBuzosDisponibles.find((producto) => producto.id === idProducto);
 carrito.push(productoCompra);
-sessionStorage.setItem("carrito", JSON.stringify(carrito));
-console.log(carrito);
+
+const {nombre, precio, imagen , id} = producto
+
+const productoCarrito = carrito.find((producto) => producto.id === idProducto);
+if (productoCarrito === undefined) {
+    const nuevoProductoCarrito = {
+        id:id,
+        nombre: nombre,
+        precio: precio,
+        imagen: imagen,
+        cantidad : 1
+    }
+    carrito.push(nuevoProductoCarrito);
+
+
+} else {
+    const indexProductoCarrito = carrito.findIndex((producto) => producto.id === idProducto);
+    carrito[indexProductoCarrito].cantidad++
+    carrito[indexProductoCarrito].precio = precio * carrito[indexProductoCarrito].cantidad
+
+    sessionStorage.setItem("carrito", JSON.stringify(carrito))
+}
+
+
+carrito = JSON.parse(sessionStorage.getItem("carrito"));
 
 
 
 
 }
 
-carrito.forEach((productoUsuario) => { 
-    let carritoUsuario = document.createElement("div");
-    carritoUsuario.innerHTML = `
+
+
+
+
+/*********************************Crear Carrito****************************************/
+const dibujarCarrito = () =>{
+
+carrito.forEach((producto) => { 
+    let body = document.createElement("div");
+    body.innerHTML = `
     <div class="listaCarrito"  >
         <div>
-         <th><img src="${productoUsuario.imagen}"  style="height:100%"</th>
+         <th><img src="${producto.imagen}"  style="height:100%"</th>
         </div>
         <div>
-            <td>${productoUsuario.nombre}</td>
+            <td>${producto.nombre}</td>
         </div>
         <div> 
-            <td>${productoUsuario.color}</td>
+            <td>${producto.color}</td>
         </div>
         <div>
-            <td>${productoUsuario.cantidad}</td>
+            <td>${producto.cantidad}</td>
         </div>
         <div>
             <td>
-            <button id="+${productoUsuario.id}" class="btn btn-success">+</button>
-            <button id="-${productoUsuario.id}" class="btn btn-danger">-</button>
+            <button  id="+${producto.id}"  class="bi bi-plus-circle"></button>
+            <button id="-${producto.id}" class="btn btn-danger">-</button>
             </td>
         </div>
         <div>
-            <td>$${productoUsuario.precio}</td>
+            <td>$${producto.precio}</td>
         </div>
-        <div>
-        </div>
-
-
-         
+                
       </div>
+        `;   
+    bodyCarrito.append(body)
 
+    const btnAgregar = document.getElementById(`+${producto.id}`)
+    const btnRestar = document.getElementById(`-${producto.id}`)
 
-        `;
-    
-    
-    verCarrito.append(carritoUsuario)
+    btnAgregar.addEventListener("click", () => aumentarCantidad(producto.id))
+    btnRestar.addEventListener("click", () => restarCantidad(producto.id))
 
+   // dibujarFooter();
 
-    const btnAgregar = document.getElementById(`+${productoUsuario.id}`)
-    const btnRestar = document.getElementById(`-${productoUsuario.id}`)
-
-    btnAgregar.addEventListener("click", () => aumentarCantidad(productoUsuario.id))
-    btnRestar.addEventListener("click", () => restarCantidad(productoUsuario.id))
-    
     } )
+}
 
+/*
+    const dibujarCarrito = () => {
+    
+        if(carrito.lenght > 0){
+            footerCarrito.innerHTML = "";
+            let footer = document.createElement("tr")
+            footer.innerHTML= `
+            
+            <th><b>Totales<b><th>
+            <th><b>${cantidadTotal}<b><th>
+            <th><b>${precioTotal}<b><th>
+            `
+            footerCarrito.append(footer);
+    
+        }
+        else{
+            footerCarrito.innerHTML= "<h3>No hay productos en carrito<h3>"
+        }
+            
+    }
+/*
    
 
 
+const generarTotales = () => {
 
+        const cantidadTotal = carrito.reduce((total, {cantidad}) => total + cantidad, 0)
+        const precioTotal = carrito.reduce((total, {precio}) => total + precio, 0);
+    }
 
-let carteras = ["agua", "menta", "garrote"];
+    
 
-sessionStorage.setItem("carteras", JSON.stringify(carteras));
-
-
+*/
 
 
 ////////////////////////////////////////////////////////////////////////////////////

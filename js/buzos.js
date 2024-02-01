@@ -8,6 +8,7 @@ let buzosRaiz= document.getElementById("buzosRaiz");
 
 
 
+
 productosBuzosDisponibles.forEach((buzos) => {
 let cardBuzos = document.createElement("div");
 cardBuzos.innerHTML = `
