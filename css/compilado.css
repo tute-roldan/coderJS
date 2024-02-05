@@ -36,6 +36,15 @@ a {
   gap: 10px;
   justify-content: center;
   justify-items: center;
+  padding-bottom: 12px;
+}
+
+.imagenCarrito{
+
+
+
+  width: 150px;
+
 }
 
 
@@ -82,7 +91,9 @@ a {
       
 
 
-
+.iniciocard{
+  margin: 20px;
+}
 
 .inicio {
   background-image: url(../img/fondo/black-concrete-wall.jpg);
@@ -135,11 +146,10 @@ a {
       width: 600px;
       margin: 20px; }
     .inicio_sectiontres_h1 {
-      text-align: center;
-      font-size: xx-large;
+      text-align: center; 
       color: white;
       font-family: "Verdana", Geneva, Tahoma, sans-serif;
-      font-size: 500%; }
+      font-size: 400%; }
 
 .esqueleto__universal_buzos {
   display: grid;

@@ -1,37 +1,40 @@
-let productosBuzosDisponibles = JSON.parse(localStorage.getItem("productosBuzos"))    
-let buzosRaiz= document.getElementById("buzosRaiz");
+let dataBuzoDisponible = JSON.parse(localStorage.getItem("dataBuzo"))    
+let buzoRaiz= document.getElementById("buzoRaiz");
 
 
 
 
 
 
+fetch("../productos.json")
+    .then((response) => response.json())
+    .then((dataBuzo) => {
 
+    
 
-
-productosBuzosDisponibles.forEach((buzos) => {
-let cardBuzos = document.createElement("div");
-cardBuzos.innerHTML = `
+dataBuzo.forEach((producto) => {
+let cardBuzo = document.createElement("div");
+cardBuzo.innerHTML = `
    <div class="card" style="width: 20rem;">
 
-       <img src=${buzos.imagen} class="card-img-top" alt="...">
+       <img src=${producto.imagen} class="card-img-top" alt="...">
    
        <div class="card-body">
-           <h5 class="card-title">${buzos.nombre}</h5>
-           <p class="card-text">${buzos.color}</p>
-           <p class="card-text">${buzos.categoria}</p>
-           <h5 class="card-title">$ ${buzos.precio}</h5>
-           <button id="comprar${buzos.id}" class="btn btn-primary">COMPRAR</button>
+           <h5 class="card-title">${producto.nombre}</h5>
+           <p class="card-text">${producto.color}</p>
+           <p class="card-text">${producto.categoria}</p>
+           <h5 class="card-title">$ ${producto.precio}</h5>
+           <button id="comprar${producto.id}" class="btn btn-primary">COMPRAR</button>
        </div>
    </div>
     `;
     
-    buzosRaiz.append(cardBuzos);
+    buzoRaiz.append(cardBuzo);
     
-    const btnComprar = document.getElementById(`comprar${buzos.id}`);
-    btnComprar.addEventListener( "click", () => agregarCarrito(buzos.id));
+    const btnComprar = document.getElementById(`comprar${producto.id}`);
+    btnComprar.addEventListener( "click", () => agregarCarrito(producto.id));
 
    
  })
-
- 
+ JSON.parse(localStorage.getItem("dataBuzo")) ||localStorage.setItem("dataBuzo", JSON.stringify(dataBuzo));
+})

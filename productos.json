@@ -1,0 +1,135 @@
+ [ 
+    
+    {
+        "id": 1 ,
+        "nombre": "Buzo con capucha corto",
+        "color": "Gris topo/ crudo",
+        "precio": 25000 ,
+        "imagen":"../img/buzos/12.jpg",
+        "categoria": "Buzos",
+        "cantidad": 1
+    },
+
+
+    {
+        "id": 2 ,
+        "nombre": "Buzo cuello redondo",
+        "color": "Gris topo bordo",
+        "precio": 23000,
+        "imagen": "../img/buzos/14.jpg",
+        "categoria": "Buzos",
+        "cantidad": 1
+    },
+
+
+    {
+        "id": 3 ,
+        "nombre": "Buzo con capucha",
+        "color": "Negro / gris perla",
+        "precio":  25000,
+        "imagen":"../img/buzos/18.jpg" ,
+        "categoria": "Buzos",
+        "cantidad": 1
+    },
+
+    {
+        "id": 4 ,
+        "nombre": "Buzo cuello redondo",
+        "color": "Verde Ingles",
+        "precio":  23000,
+        "imagen":"../img/buzos/7.jpg" ,
+        "categoria": "Buzos",
+        "cantidad": 1
+    },
+
+    {
+        "id": 5 ,
+        "nombre": "Buzo con capucha largo",
+        "color": "Mostaza / Verde ingles",
+        "precio": 25000 ,
+        "imagen":"../img/buzos/9.jpg" ,
+        "categoria": "Buzos",
+        "cantidad": 1
+    },
+
+
+    {
+        "id": 6 ,
+        "nombre": "Buzo con capucha corto",
+        "color": "Rosa Chicle",
+        "precio":  25000,
+        "imagen": "../img/buzos/49.jpg" ,
+        "categoria": "Buzos",
+        "cantidad": 1
+    },
+
+  
+    
+    
+    {
+        "id": 7 ,
+        "nombre": "Gorra Trucker",
+        "color": "Chocolate/Crudo/Naranja",
+        "precio": 10500 ,
+        "imagen": "../img/gorras/1.jpg",
+        "categoria": "Gorras",
+        "cantidad": 1
+    },
+
+
+    {
+        "id": 8 ,
+        "nombre": "Gorra Flores",
+        "color": "Negra/Verde/Rosa",
+        "precio": 10500,
+        "imagen":"../img/gorras/10.jpg" ,
+        "categoria": "Gorras",
+        "cantidad": 1
+    },
+
+
+    {
+        "id": 9 ,
+        "nombre": "Gorra Trucker",
+        "color": "Chocolate/Crudo",
+        "precio":  10500,
+        "imagen":"../img/gorras/17.jpg",
+        "categoria": "Gorras",
+        "cantidad": 1
+    },
+
+    {
+        "id": 10 ,
+        "nombre": "Gorra Trucker",
+        "color": "Verde/Crudo/Negro",
+        "precio":  10500,
+        "imagen":"../img/gorras/2.jpg" ,
+        "categoria": "Gorras",
+        "cantidad": 1
+    },
+
+    {
+        "id": 11 ,
+        "nombre": "Gorra Trucker",
+        "color": "Azul/Chocolate/Canela",
+        "precio": 10500 ,
+        "imagen":"../img/gorras/4.jpg",
+        "categoria": "Gorras",
+        "cantidad": 1
+    },
+
+
+    {
+        "id": 12 ,
+        "nombre": "Gorra Trucker",
+        "Color": "Crudo/Gris/Canela",
+        "precio":  10500,
+        "imagen": "../img/gorras/6.jpg",
+        "categoria": "Gorras",
+        "cantidad": 1
+    }
+
+
+
+]
+
